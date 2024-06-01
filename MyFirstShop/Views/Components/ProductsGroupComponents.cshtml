@@ -1,0 +1,11 @@
+﻿@model IEnumerable<ShowGroupViewModel>
+
+	<ul class="list-group">
+@foreach(var item in Model)
+{
+	<li class="list-group-item d-flex justify-content-between align-items-center ">
+			<a href="/Group/@item.GroupId/@item.GroupName">@item.GroupName</a>
+		<span class="badge alert-primary card-header-pills ">@item.ProductCount</span>
+	</li>
+}
+</ul>

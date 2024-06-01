@@ -1,0 +1,31 @@
+﻿@page
+@model MyFirstShop.Pages.Admin.DeleteModel
+@{
+	ViewData["Title"] = "حذف";
+}
+
+<h1>حذف کالا</h1>
+<hr />
+<form method="post">
+	<dl class="dl-horizontal">
+		<dd><label asp-for="Product.Name"></label></dd>
+		<dt>
+			<input asp-for="Product.Name" class="form-control" readonly />
+			<span asp-validation-for="Product.Name"></span>
+		</dt>
+		<dd><label asp-for="Product.Description"></label></dd>
+		<dt>
+			<textarea asp-for="Product.Description" class="form-control" readonly></textarea>
+			<span asp-validation-for="Product.Description"></span>
+		</dt>
+		<dd><label>تصویر</label></dd>
+		<dt>
+			<img src="/images/@(Model.Product.Id).jpg" style="max-width:200px" />
+		</dt>
+		<dd></dd>
+		<dt>
+			<input type="hidden" asp-for="Product.Id" />
+			<input type="submit" class="btn btn-danger" value="حذف">
+		</dt>
+	</dl>
+</form>

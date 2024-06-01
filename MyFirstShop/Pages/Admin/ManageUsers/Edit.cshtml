@@ -1,0 +1,55 @@
+﻿@page
+@model MyFirstShop.Pages.Admin.ManageUsers.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Users</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Users.UserId" />
+            <div class="form-group">
+                <label asp-for="Users.Email" class="control-label"></label>
+                <input asp-for="Users.Email" class="form-control" />
+                <span asp-validation-for="Users.Email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Users.UserName" class="control-label"></label>
+                <input asp-for="Users.UserName" class="form-control" />
+                <span asp-validation-for="Users.UserName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Users.Password" class="control-label"></label>
+                <input asp-for="Users.Password" class="form-control" />
+                <span asp-validation-for="Users.Password" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Users.RegisterDate" class="control-label"></label>
+                <input asp-for="Users.RegisterDate" class="form-control" />
+                <span asp-validation-for="Users.RegisterDate" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="Users.IsAdmin" /> @Html.DisplayNameFor(model => model.Users.IsAdmin)
+                </label>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

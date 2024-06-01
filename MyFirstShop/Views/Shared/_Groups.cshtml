@@ -1,0 +1,16 @@
+﻿@using MyFirstShop.Data.Repositories
+@inject IGroupRepository _GroupRepository
+
+<li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown" aria-haspopup="true">
+        گروه ها
+    </a>
+
+    <div class="dropdown-menu" aria-labelledby="dropdown09">
+        @foreach (var item in _GroupRepository.GetAllCategories())
+        {
+            <a class="dropdown-item" href="/Group/@item.Id/@item.Name">@item.Name</a>
+        }   
+    </div>
+
+</li>
